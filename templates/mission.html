@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    Street Location:<br>
+    <input type="text" ng-model="user.streetloc"  required><br>
+    Indoor/Outdoor:<br>
+    <input type="text" ng-model="user.inout"  required>
+    <br><br>
+    Type:<br/>
+    <input type="text" ng-model="user.Type"  required>
+    <br><br>
+    Minor/Major
+    <input type="text" ng-model="user.minmaj"  required>
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+</script>
+
+</body>
+</html>
+
