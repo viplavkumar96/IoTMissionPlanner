@@ -9,7 +9,7 @@ def authenticate(user,password): #method for authenticating users
     data = request.get_json()
     usernm = data['user']
     pwd = data['passwd'] 
-    user_data = User.query.filter_by(username = usernm,password = pwd)
+    user_data = User.query.filter_by(username = usernm,password = pwd) or None
     if user_data is not None:
         return user
 
