@@ -18,8 +18,10 @@ class Mission(db.Model):
     minmaj = db.Column(db.String(32)) #Minor/Major
     user = db.relationship(User)
 
-    def create_message:
-        pass
-
+class drones(db.Model):
+    drone_id = db.Column(db.Integer,primary_key = True)
+    sensors_type = db.Column(db.String(500))
+    payload = db.Column(db.Integer)
+    lifetime = db.Column(db.datetime)
 db.create_all()
     
